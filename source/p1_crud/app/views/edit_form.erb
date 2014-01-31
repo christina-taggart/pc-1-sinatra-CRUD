@@ -4,7 +4,7 @@
       <table cellpadding="10">
         <tr>
           <td>Title: </td>
-          <td><input type="text" name="title" value="<%= @note.title %>"></td>
+          <td><input type="text" name="title" size= "38" value="<%= @note.title %>"></td>
         </tr>
         <tr>
           <td>Content: </td>
@@ -14,8 +14,14 @@
         </tr>
         <tr>
           <td><input name="_method" type="hidden" value="put"></td>
-          <td><input type="submit" value="Update"></td>
+          <td><input type="submit" value="Update">
+    </form>
+            <form class="right delete" action="/notes/<%= @note.id %>" method="post" onsubmit="return confirm('Are you sure?');">
+              <input name="_method" type="hidden" value="delete">
+              <input type="submit" value="Delete" >
+            </form>
+          </td>
         </tr>
       </table>
-    </form>
+
 </fieldset>

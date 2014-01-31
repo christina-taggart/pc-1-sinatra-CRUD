@@ -3,7 +3,7 @@
   <% if @deleted %>
     <h4 class="center alert"><%= @deleted %></h4>
   <% end %>
-  <h4 class="center"><a href="/notes/new">New Note</a></h4>
+  <h4 class="center"><a href="/notes/new">Add Note</a></h4>
   <% @notes.each do |note| %>
     <div class="note">
       <p class="note-title">
@@ -11,11 +11,7 @@
       </p>
       <div class="note-content">
         <p class="note-content-text"><%= note.content %></p>
-        <form class="left" action="/notes/<%= note.id %>" method="post">
-          <input name="_method" type="hidden" value="delete">
-          <input type="submit" value="Delete">
-        </form>
-        <a href="/notes/<%= note.id %>/edit" class="right">
+        <a href="/notes/<%= note.id %>/edit">
           <button>Edit</button>
         </a>
       </div>
