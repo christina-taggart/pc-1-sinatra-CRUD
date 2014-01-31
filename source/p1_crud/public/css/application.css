@@ -14,6 +14,12 @@ th {
   text-align: left;
 }
 
+.note {
+  padding-bottom: 16px;
+  margin-bottom: 32px;
+  border-bottom: 1px dotted #333;
+}
+
 .center {
   text-align: center;
 }
@@ -22,7 +28,7 @@ th {
   font-weight: bold;
 }
 
-.note-content {
+.note-content-text {
   font-style: italic;
 }
 
