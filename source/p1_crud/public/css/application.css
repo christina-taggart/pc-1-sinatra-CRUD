@@ -5,6 +5,11 @@
   border: 1px dotted black;
 }
 
+fieldset {
+  margin: 20px auto;
+  width: 600px;
+}
+
 th {
   text-align: left;
 }

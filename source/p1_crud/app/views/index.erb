@@ -1,10 +1,11 @@
 <div class="container">
   <h1 class="center">Notes</h1>
+  <h4 class="center"><a href="/notes/new">New Note</a></h4>
   <% @notes.each do |post| %>
     <div class="post">
       <p class="post-title"><%= post.title %></p>
       <p class="post-content"><%= post.content %></p>
     </div>
   <% end %>
-  <h4 class="expand">Expand Posts</h4>
+  <h4 class="expand">Expand Notes</h4>
 </div>
