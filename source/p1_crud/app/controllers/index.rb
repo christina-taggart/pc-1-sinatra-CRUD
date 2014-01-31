@@ -3,6 +3,7 @@ get '/' do
   erb :index
 end
 
-get '/info' do
-  Demo.new(self).info
+get '/notes' do
+  @all_notes = Note.all
+  erb :notes
 end
