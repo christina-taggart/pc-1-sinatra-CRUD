@@ -8,3 +8,21 @@
 th {
   text-align: left;
 }
+
+.center {
+  text-align: center;
+}
+
+.post-title {
+  font-weight: bold;
+}
+
+.post-content {
+  font-style: italic;
+}
+
+.expand {
+  text-align: center;
+  color: green;
+
+}
