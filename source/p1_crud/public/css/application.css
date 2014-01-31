@@ -15,13 +15,25 @@ th {
 }
 
 .note {
-  padding-bottom: 16px;
+  padding-bottom: 32px;
   margin-bottom: 32px;
   border-bottom: 1px dotted #333;
 }
 
 .center {
   text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.post form {
+  width: 300px;
 }
 
 .note-title {

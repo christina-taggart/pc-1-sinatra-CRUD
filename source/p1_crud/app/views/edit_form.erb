@@ -1,0 +1,21 @@
+<fieldset>
+  <legend>Edit Note</legend>
+    <form method="post" action="/notes/<%= @note.id %>">
+      <table cellpadding="10">
+        <tr>
+          <td>Title: </td>
+          <td><input type="text" name="title" value="<%= @note.title %>"></td>
+        </tr>
+        <tr>
+          <td>Content: </td>
+          <td>
+            <textarea name="content" cols="40" rows="3"><%= @note.content %></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td><input name="_method" type="hidden" value="put"></td>
+          <td><input type="submit" value="Update"></td>
+        </tr>
+      </table>
+    </form>
+</fieldset>

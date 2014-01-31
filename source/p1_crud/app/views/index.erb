@@ -11,10 +11,13 @@
       </p>
       <div class="note-content">
         <p class="note-content-text"><%= note.content %></p>
-        <form action="/notes/<%= note.id %>" method="post">
+        <form class="left" action="/notes/<%= note.id %>" method="post">
           <input name="_method" type="hidden" value="delete">
           <input type="submit" value="Delete">
         </form>
+        <a href="/notes/<%= note.id %>/edit" class="right">
+          <button>Edit</button>
+        </a>
       </div>
     </div>
   <% end %>

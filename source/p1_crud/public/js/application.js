@@ -39,6 +39,6 @@ var showContent = function(){
   for(var i = 0; i < notes.length; i++){
     notes[i].hidden = false;
   }
-  this.hidden = true
+  this.hidden = true;
 };
 
