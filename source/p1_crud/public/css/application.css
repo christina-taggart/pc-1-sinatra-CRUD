@@ -2,9 +2,52 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+}
+
+h1 {
+  text-align: center;
+  color: #222;
+}
+
+nav {
+  height: 100%;
+  margin: 50px 120px;
+  position: fixed;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 th {
   text-align: left;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 20px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 10px;
+  color: #222;
+}
+
+.content {
+  font-family: serif;
+  font-size: 1.1em;
+  margin: 10px 0 20px 10px;
+  color: #444;
+  font-style: italic;
+}
+
+.editbtn{
+  margin: 0 0 20px 10px;
 }

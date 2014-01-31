@@ -1,0 +1,23 @@
+<form class="edit_submit" action="/notes/<%= @note.id %>" method="post">
+  <fieldset>
+    <legend>Edit Note</legend>
+    <table cellpadding="10">
+      <tr>
+        <td>Title</td>
+        <td><input name="title" type="text" value="<%= @note.title %>"></td>
+      </tr>
+      <tr>
+        <td>Content</td>
+        <td><textarea name="content"><%= @note.content %></textarea></td>
+      </tr>
+    </fieldset>
+    <tr>
+      <td><input type="hidden" name="_method" value="put"></td>
+      <td><input type="submit" value="Submit"></td>
+  </form>
+    <td><form class="delete_submit" action="/notes/<%= @note.id %>" method="post" onsubmit="return confirm('Really delete? Forever?');"></td>
+    <td><input type="hidden" name="_method" value="delete"></td>
+    <td><input type="submit" value="Delete"></td>
+  </form>
+</tr>
+</table>
