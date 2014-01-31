@@ -1,12 +1,12 @@
 $(document).ready(function(){
   var expand = document.querySelector('.expand');
   expand.hidden = true;
-  bindPostListener();
+  bindNoteListener();
   bindExpandListener();
 });
 
-var bindPostListener = function(){
-  var titles = document.querySelectorAll('.post-title');
+var bindNoteListener = function(){
+  var titles = document.querySelectorAll('.note-title');
   for(var i = 0; i < titles.length; i++){
     titles[i].addEventListener('click', hideContent);
   }
@@ -14,18 +14,18 @@ var bindPostListener = function(){
 
 var hideContent = function(){
   var parent = this.parentElement;
-  killPosts();
-  var postContent = parent.querySelector('.post-content');
-  postContent.hidden = false;
+  killNotes();
+  var noteContent = parent.querySelector('.note-content');
+  noteContent.hidden = false;
   var expand = document.querySelector('.expand');
   expand.hidden = false;
 };
 
-var killPosts =  function(){
-  var posts = document.querySelectorAll('.post');
-  for(var i = 0; i < posts.length; i++){
-    var postContent = posts[i].querySelector('.post-content');
-    postContent.hidden = true;
+var killNotes =  function(){
+  var notes = document.querySelectorAll('.note');
+  for(var i = 0; i < notes.length; i++){
+    var noteContent = notes[i].querySelector('.note-content');
+    noteContent.hidden = true;
   }
 };
 
@@ -35,10 +35,10 @@ var bindExpandListener = function(){
 };
 
 var showContent = function(){
-  var posts = document.querySelectorAll('.post-content');
-  for(var i = 0; i < posts.length; i++){
-    posts[i].hidden = false;
+  var notes = document.querySelectorAll('.note-content');
+  for(var i = 0; i < notes.length; i++){
+    notes[i].hidden = false;
   }
-  this.hidden = true;
+  this.hidden = true
 };
 

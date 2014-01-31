@@ -1,10 +1,16 @@
 <div class="container">
   <h1 class="center">Notes</h1>
+  <% if session[:error] %>
+    <h4><%= session[:error] %></h4>
+  <% end %>
   <h4 class="center"><a href="/notes/new">New Note</a></h4>
-  <% @notes.each do |post| %>
-    <div class="post">
-      <p class="post-title"><%= post.title %></p>
-      <p class="post-content"><%= post.content %></p>
+  <% @notes.each do |note| %>
+    <div class="note">
+      <p class="note-title">
+        <%= note.title %>
+        <a href="/"></a>
+      </p>
+      <p class="note-content"><%= note.content %></p>
     </div>
   <% end %>
   <h4 class="expand">Expand Notes</h4>
