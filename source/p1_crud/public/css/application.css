@@ -20,6 +20,11 @@ th {
   border-bottom: 1px dotted #333;
 }
 
+.single {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
 .center {
   text-align: center;
 }
@@ -34,10 +39,18 @@ th {
 
 .note-title {
   font-weight: bold;
+  color: #333;
 }
 
 .note-content-text {
   font-style: italic;
+}
+
+.note-content-text a {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: bold;
+  color: #333;
 }
 
 .expand {

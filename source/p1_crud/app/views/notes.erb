@@ -1,9 +1,5 @@
 <div class="container">
   <h1 class="center">Notes</h1>
-  <% if @deleted %>
-    <h4 class="center alert"><%= @deleted %></h4>
-  <% end %>
-  <h4 class="center"><a href="/notes/new">Add Note</a></h4>
   <% @notes.each do |note| %>
     <div class="note">
       <p class="note-title">
