@@ -29,5 +29,8 @@ th {
 .expand {
   text-align: center;
   color: green;
+}
 
+.alert {
+  color: orange;
 }

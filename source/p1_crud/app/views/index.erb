@@ -1,16 +1,19 @@
 <div class="container">
   <h1 class="center">Notes</h1>
-  <% if session[:error] %>
-    <h4><%= session[:error] %></h4>
+  <% if @deleted %>
+    <h4 class="center alert"><%= @deleted %></h4>
   <% end %>
   <h4 class="center"><a href="/notes/new">New Note</a></h4>
   <% @notes.each do |note| %>
     <div class="note">
       <p class="note-title">
         <%= note.title %>
-        <a href="/"></a>
       </p>
       <p class="note-content"><%= note.content %></p>
+      <form action="/notes/<%= note.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <input type="submit" value="Delete">
+      </form>
     </div>
   <% end %>
   <h4 class="expand">Expand Notes</h4>

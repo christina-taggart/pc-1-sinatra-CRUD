@@ -1,4 +1,8 @@
+use Rack::MethodOverride
+
 get '/' do
+  @deleted = session[:deleted]
+  session[:deleted] = nil
   @notes = Note.all
   erb :index
 end
@@ -13,5 +17,7 @@ post '/notes' do
 end
 
 delete '/notes/:id' do
-
+  Note.destroy(params[:id])
+  session[:deleted] = "Note ##{params[:id]} deleted."
+  redirect '/'
 end
