@@ -2,11 +2,11 @@ get '/' do
   erb :index
 end
 
+#CREATE note
 get '/new_note' do
   erb :new_note
 end
 
-#CREATE note
 post '/new_note' do
   new_note = Note.create(title: params[:title], content: params[:content])
   redirect "/note/#{new_note.id}"
@@ -25,5 +25,11 @@ end
 
 # DELETE note
 delete '/note/:note_id' do
-
+  if @delete_mode
+    Note.find(params[:note_id]).destroy
+    redirect '/'
+  else
+    @delete_mode = true
+    erb :delete_prompt
+  end
 end
