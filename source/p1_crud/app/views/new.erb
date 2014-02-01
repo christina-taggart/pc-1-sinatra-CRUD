@@ -1,0 +1,7 @@
+<div>
+  <form action="/notes/<%= @note.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="note[title]" value="<%= @note.title %>">
+    <textarea name="note[body]"><%= @note.body %></textarea>
+  </form>
+</div>

@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Notes</h1>
+  <ul>
+    <% @notes.each do |note| %>
+      <li><a href="/notes/<%= note.id %>"><%= note.title %></a></li>
+    <% end %>
+  </ul>
+</div>
