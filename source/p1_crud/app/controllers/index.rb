@@ -16,7 +16,7 @@ post '/notes' do
 end
 
 get '/notes/:id' do
-	@partials = ["view_a_note"]
+	@partials = ["partials/view_a_note"]
 	erb :note
 end
 
