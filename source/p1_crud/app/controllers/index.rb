@@ -8,20 +8,21 @@ get '/notes' do
   erb :notes
 end
 
+# Show form for creating new note
+get '/notes/new' do
+  erb :new
+end
+
 # Show single note
 get '/notes/:id' do
   @note = Note.find(params[:id])
   erb :note
 end
 
-# Show form for creating new note
-get 'notes/new' do
-  erb :new
-end
-
 # Post request for creating new note
 post '/notes' do
   Note.create(params[:note])
+  redirect '/notes'
 end
 
 # Show page for editing a note
