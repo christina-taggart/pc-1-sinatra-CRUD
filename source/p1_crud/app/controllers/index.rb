@@ -19,3 +19,8 @@ delete '/' do
   @deleted_note.destroy_all
   redirect "/"
 end
+
+# Things to add as extras:
+# Error message if id is invalid
+# Ordering post update.
+# CSS style
