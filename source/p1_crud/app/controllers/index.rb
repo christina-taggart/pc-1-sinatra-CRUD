@@ -5,6 +5,7 @@ end
 
 get '/notes' do
 	# view all notes (by title)
+	@partials = ["partials/create_note", "partials/existing_notes"]
 	erb :note
 end
 
@@ -15,7 +16,8 @@ post '/notes' do
 end
 
 get '/notes/:id' do
-	# view specific note
+	@partials = ["view_a_note"]
+	erb :note
 end
 
 put '/notes/:id' do

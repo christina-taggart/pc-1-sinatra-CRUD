@@ -1,8 +1,10 @@
 <div class="container">
   <h1>Interact with Your Notes</h1>
 
-  <%= erb(:'partials/existing_notes') %>
+  <% @partials.each do |partial| %>
 
-  <%= erb(:'partials/create_note') %>
-  
+  <%= erb(:"#{partial}") %>
+
+  <% end %>
+
 </div>
