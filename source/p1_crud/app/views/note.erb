@@ -1,4 +1,16 @@
 <div class="container">
   <h3><%= @note.title %></h3>
   <p><%= @note.content %></p>
+
+  <form action="/note/<%= @note.id %>" method="post">
+    <input type="hidden" name="method" value="patch">
+    <button action="submit">Change note</button/>
+  </form>
+
+  <form action="/note/<%= @note.id %>" method="post">
+    <input type="hidden" name="method" value="delete">
+    <button action="submit">Delete note</button/>
+  </form>
+
+  <p><a href="/">See all notes</a><p>
 </div>

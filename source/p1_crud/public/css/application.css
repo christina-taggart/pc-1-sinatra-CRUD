@@ -1,3 +1,7 @@
+body {
+  font-family: Georgia, serif;
+}
+
 .container {
   margin: 20px auto;
   width: 70%;
@@ -5,14 +9,21 @@
   text-align: center;
 }
 
-p {
-  font-family: Georgia
-}
-
 h3 {
   border-bottom: 1px solid black;
-  font-family: Georgia, serif;
   width: 20%;
   margin: 0 auto 40px auto;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: orange;
+}
+
+form {
+  margin: 10px auto 10px auto;
 }
 
