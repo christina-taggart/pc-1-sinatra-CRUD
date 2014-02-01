@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Interact with Your Notes</h1>
+
+  <h2>Existing Notes</h2>
+  <% @notes = Note.all %>
+  <ul>
+  <% @notes.each do |note| %>
+  <li>
+  	<a href="/notes/<%= note.id %>"><%= note.title %></a>
+  </li>
+  <% end %>
+
+  <h2>Want to Create a New Note?</h2>
+  <form action='/notes' method='post'>
+  	Title: <input type='text' name='title'>
+  	Note Content: <input type='text' name='content'>
+  	<input type='submit' value='submit'>
+  </form>
+</div>
