@@ -7,7 +7,21 @@
   </form>
   <h3>Here are your notes:</h3>
   <% @note.each do |note| %>
-  <p id="title"><%= note.title %></p>
+  <p id="title"><%= note.id %>. <%= note.title %></p>
   <p><%= note.content %></p>
   <% end %>
+  <h3>Update your notes here:</h3>
+  <form action "/" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
+    <input type="text" name="title_update" value="Update Title" onclick='javascript: this.value = ""'>
+    <input type="text" name="content_update" value="Update Content" onclick='javascript: this.value = ""'>
+    <button type="submit">Update!</button>
+  </form>
+  <h3>Delete your notes here:</h3>
+  <form action "/" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
+    <button type="submit">Delete!</button>
+  </form>
 </div>

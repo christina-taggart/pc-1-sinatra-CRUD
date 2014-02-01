@@ -5,14 +5,17 @@ end
 
 post '/' do
   @note = Note.create(title: params[:title], content: params[:content])
-  puts @note
   redirect "/"
 end
 
 put '/' do
-
+  @updated_note = Note.where(id: params[:id])
+  @updated_note.update_all(title: params[:title_update], content: params[:content_update])
+  redirect "/"
 end
 
 delete '/' do
-
+  @deleted_note = Note.where(id: params[:id])
+  @deleted_note.destroy_all
+  redirect "/"
 end

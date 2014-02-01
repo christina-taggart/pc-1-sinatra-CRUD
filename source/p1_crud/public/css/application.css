@@ -12,3 +12,7 @@ th {
 #title {
   font-weight: bold;
 }
+
+button {
+  border-radius: 2em;
+}
