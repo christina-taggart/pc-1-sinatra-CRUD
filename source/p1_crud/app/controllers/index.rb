@@ -2,9 +2,14 @@ get '/' do
   erb :index
 end
 
-#CREATE note
-post '/note' do
+get '/new_note' do
+  erb :new_note
+end
 
+#CREATE note
+post '/new_note' do
+  new_note = Note.create(title: params[:title], content: params[:content])
+  redirect "/note/#{new_note.id}"
 end
 
 # READ note
