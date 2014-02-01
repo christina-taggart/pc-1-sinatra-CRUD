@@ -5,18 +5,21 @@ end
 # Show links to all notes
 get '/notes' do
   @notes = Note.all
-  erb :notes
+  @partial = :notes
+  erb :single_page
 end
 
 # Show form for creating new note
 get '/notes/new' do
-  erb :new
+  @partial = :new
+  erb :single_page
 end
 
 # Show single note
 get '/notes/:id' do
   @note = Note.find(params[:id])
-  erb :note
+  @partial = :note
+  erb :single_page
 end
 
 # Post request for creating new note
@@ -28,7 +31,8 @@ end
 # Show page for editing a note
 get '/notes/:id/edit' do
   @note = Note.find(params[:id])
-  erb :edit
+  @partial = :edit
+  erb :single_page
 end
 
 # Update an existing note
