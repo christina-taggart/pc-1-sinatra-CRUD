@@ -9,9 +9,13 @@
     </form>
 
     <form action="/note/<%= @note.id %>" method="post">
-      <input type="hidden" name="method" value="delete">
+      <input type="hidden" name="_method" value="delete">
       <button action="submit">Delete note</button/>
     </form>
+
+    <% if session[:delete_mode] %>
+    <p class="alert">Are you sure you want to delete this note?</p>
+    <% end %>
   </div>
 
   <p><a href="/">See all notes</a><p>

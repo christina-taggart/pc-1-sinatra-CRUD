@@ -25,11 +25,12 @@ end
 
 # DELETE note
 delete '/note/:note_id' do
-  if @delete_mode
+  if session[:delete_mode]
     Note.find(params[:note_id]).destroy
+    session[:delete_mode] = nil
     redirect '/'
   else
-    @delete_mode = true
-    erb :delete_prompt
+    session[:delete_mode] = true
+    redirect "/note/#{params[:note_id]}"
   end
 end
