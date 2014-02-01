@@ -1,10 +1,18 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 70%;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  text-align: center;
 }
 
-th {
-  text-align: left;
+p {
+  font-family: Georgia
 }
+
+h3 {
+  border-bottom: 1px solid black;
+  font-family: Georgia, serif;
+  width: 20%;
+  margin: 0 auto;
+}
+
