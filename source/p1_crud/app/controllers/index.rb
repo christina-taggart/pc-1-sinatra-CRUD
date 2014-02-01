@@ -5,7 +5,8 @@ end
 
 post '/' do
   @note = Note.create(title: params[:title], content: params[:content])
-  erb :index
+  puts @note
+  redirect "/"
 end
 
 put '/' do

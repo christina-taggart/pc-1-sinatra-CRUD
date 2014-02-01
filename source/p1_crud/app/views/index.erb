@@ -1,10 +1,11 @@
 <div class="container">
   <h1>Welcome to NoteMaker Pro!</h1>
   <form action="/" method="post">
-    <input type="text" name="title" value="Note Title"><br>
-    <input type="text" name="content" value="Note Content">
-    <button type="button">Submit!</button>
+    <input type="text" name="title" value="Note Title" onclick='javascript: this.value = ""'><br>
+    <input type="text" name="content" value="Note Content" onclick='javascript: this.value = ""'>
+    <button type="submit">Submit!</button>
   </form>
+  <h3>Here are your notes:</h3>
   <% @note.each do |note| %>
   <p id="title"><%= note.title %></p>
   <p><%= note.content %></p>
