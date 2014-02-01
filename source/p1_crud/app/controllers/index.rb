@@ -2,7 +2,7 @@ get '/' do
   erb :index
 end
 
-# Show all notes
+# Show links to all notes
 get '/notes' do
 
 end
@@ -22,6 +22,7 @@ put '/notes/:id' do
 
 end
 
+# Delete an existing note
 delete '/notes/:id' do
 
 end
