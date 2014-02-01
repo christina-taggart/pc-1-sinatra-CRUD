@@ -1,8 +1,17 @@
 get '/' do
-  # Look in app/views/index.erb
+  @note = Note.all
   erb :index
 end
 
-get '/info' do
-  Demo.new(self).info
+post '/' do
+  @note = Note.create(title: params[:title], content: params[:content])
+  erb :index
+end
+
+put '/' do
+
+end
+
+delete '/' do
+
 end
