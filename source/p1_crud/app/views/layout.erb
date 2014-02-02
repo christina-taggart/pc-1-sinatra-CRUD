@@ -17,7 +17,14 @@
 
   <title></title>
 </head>
-<body>
-  <%= yield %>
-</body>
+  <body>
+    <div>
+    <ul>
+      <li> <a href = "/"> Home </a> </li>
+      <li> <a href = "/notes"> View note </a> </li>
+      <li> <a href = "/note/new"> Add notes </a> </li>
+    </ul>
+  </div>
+    <%= yield %>
+  </body>
 </html>

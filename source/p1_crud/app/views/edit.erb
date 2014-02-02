@@ -1,0 +1,8 @@
+<div class = "container">
+	<form action "/notes/<%=@note.id%>" method = "post">
+		<input type = "hidden" name = "_method" value = "patch">
+		Title :<INPUT type="text" name = "title"   VALUE="<%= @note.title %>">
+		Content: <INPUT type="text" name = "content"   VALUE="<%= @note.content %>">
+		<input type="submit" value="Save changes">
+	</form>
+</div>

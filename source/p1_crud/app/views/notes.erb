@@ -1,0 +1,5 @@
+<div class = "container">
+ <% @notes.each do |post| %>
+	<p> <a href = "/notes/<%=post.id%>"> <%= post.title %> </p>
+ <% end %>
+</div>

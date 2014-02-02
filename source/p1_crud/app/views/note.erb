@@ -1,0 +1,8 @@
+<div class = "container note">
+	<%= @note.title %> <br>
+	<%= @note.content %>
+</div>
+<div class = "container choices">
+	<a href = "/edit/<%=@note.id%>"> Edit Note
+	<a href = "/delete/<%=@note.id%>"> Delete Note
+</div>
