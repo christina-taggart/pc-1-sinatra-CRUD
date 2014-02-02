@@ -1,0 +1,4 @@
+<h2>View This Note</h2>
+<% @note = Note.find(params[:id]) %>
+<p><%= @note.title %></p>
+<p><%= @note.content %></p>

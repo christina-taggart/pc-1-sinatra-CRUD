@@ -1,10 +1,11 @@
 <div class="container">
   <h1>Interact with Your Notes</h1>
+  <% if @partials %>
+	  <% @partials.each do |partial| %>
 
-  <% @partials.each do |partial| %>
+	  <%= erb(:"#{partial}") %>
 
-  <%= erb(:"#{partial}") %>
-
-  <% end %>
+	  <% end %>
+	<% end %>
 
 </div>
