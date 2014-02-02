@@ -1,25 +1,25 @@
 get '/' do
   # Look in app/views/index.erb
-  erb :index
+  redirect '/notes'
 end
 
 get '/notes' do
 	# view all notes (by title)
 	@partials = ["partials/create_note", "partials/existing_notes"]
-	erb :note
+	erb :index
 end
 
 post '/notes' do
 	# creates a new note
 	Note.create(params)
 	@partials = ["partials/create_note", "partials/existing_notes"]
-	erb :note
+	erb :index
 end
 
 get '/notes/:id' do
 	@partials = ["partials/view_a_note", "partials/update_a_note", "partials/delete_a_note"]
 	p @note = Note.find(params[:id])
-	erb :note
+	erb :index
 end
 
 put '/notes/:id' do

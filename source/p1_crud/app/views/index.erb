@@ -1,5 +1,11 @@
 <div class="container">
-  <h1>Welcome to Notes!</h1>
+  <h1>Interact with Your Notes</h1>
+  <% if @partials %>
+	  <% @partials.each do |partial| %>
+	  <hr/>
+	  <%= erb(:"#{partial}") %>
 
+	  <% end %>
+	<% end %>
 
 </div>
