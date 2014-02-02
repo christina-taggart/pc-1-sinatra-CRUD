@@ -1,4 +1,5 @@
 get '/' do
+  session[:delete_mode] = nil
   erb :index
 end
 
@@ -20,7 +21,11 @@ end
 
 # UPDATE note
 patch '/note/:note_id' do
-
+  updated_note = Note.where(id: params[:note_id]).first
+  updated_note.title = params[:title]
+  updated_note.contente = params[:content]
+  updated_note.save
+  redirect "/note/#{params[:note_id]}"
 end
 
 # DELETE note

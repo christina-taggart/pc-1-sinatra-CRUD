@@ -2,9 +2,11 @@
   <h3><%= @note.title %></h3>
   <p><%= @note.content %></p>
 
-  <div class="bottom-menu"
+  <div class="bottom-menu">
     <form action="/note/<%= @note.id %>" method="post">
-      <input type="hidden" name="method" value="patch">
+      <input type="hidden" name="_method" value="patch">
+      <input type="text" name="title" value="<%= @note.title %>"><br><br>
+      <textarea cols="40" rows="10" name="content"><%= @note.content %></textarea><br><br>
       <button action="submit">Change note</button/>
     </form>
 
