@@ -1,0 +1,10 @@
+<div class="container">
+
+  <form action="/notes/<%= @note.id %>" method="post">
+    <input name="_method" type="hidden" value="delete" />
+    <input type="submit" value="Are you sure?" />
+  </form>
+
+  <p><a href="/">Back to Home</a> </p>
+
+</div>
