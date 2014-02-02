@@ -1,8 +1,17 @@
 get '/' do
-  # Look in app/views/index.erb
   erb :index
 end
 
-get '/info' do
-  Demo.new(self).info
+get '/notes' do
+  erb :allnotes
 end
+
+get '/notes/create' do
+  erb :create
+end
+
+post '/notes/create' do
+  Note.create(title: params[:title], content: params[:content])
+  redirect '/notes'
+end
+

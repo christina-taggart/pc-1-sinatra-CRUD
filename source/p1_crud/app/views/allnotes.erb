@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>View All Notes</h2>
+  <% @notes = Note.all %>
+  <% @notes.map do |note| %>
+  <div id="notepad">
+    <li><%= note.title.capitalize! %></li>
+    <li><%= note.content.capitalize! %></li><br>
+  </div>
+ <% end %>
+</div>
