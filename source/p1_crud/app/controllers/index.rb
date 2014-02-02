@@ -23,7 +23,7 @@ end
 patch '/note/:note_id' do
   updated_note = Note.where(id: params[:note_id]).first
   updated_note.title = params[:title]
-  updated_note.contente = params[:content]
+  updated_note.content = params[:content]
   updated_note.save
   redirect "/note/#{params[:note_id]}"
 end
