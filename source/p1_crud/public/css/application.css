@@ -12,3 +12,13 @@ th {
 
 body {
 }
+
+#nav ul {
+	list-style: none;
+	text-align: center;
+}
+
+#nav ul li {
+	display: inline;
+	padding-right: 50px;
+}

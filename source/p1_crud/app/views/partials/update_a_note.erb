@@ -1,7 +1,7 @@
 <h2>Want to Update this Note?</h2>
   <form method='post' action='/notes/<%= @note.id %>'>
   	<input type="hidden" name="_method" value="put">
-  	New Title: <input type='text' name='title'>
-  	New Note Content: <input type='text' name='content'>
+  	New Title: <input type='text' name='title'><br/>
+  	New Note Content: <input type='text' name='content'><br/>
   	<button type='submit'>Update</button>
   </form>

@@ -29,5 +29,4 @@ end
 
 delete '/notes/:id' do
 	Note.find(params[:id]).delete
-	redirect '/notes'
-end
+	redirect '/notes'end
