@@ -1,0 +1,5 @@
+<h2>Want to Delete this Note?</h2>
+  <form method='post' action='/notes/<%= @note.id %>'>
+  	<input type="hidden" name="_method" value="delete">
+  	<button type='submit'>Delete!</button>
+  </form>

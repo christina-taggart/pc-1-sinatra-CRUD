@@ -3,14 +3,12 @@
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px solid black;
-/*  background: #ccc url("http://fc07.deviantart.net/fs71/f/2011/177/c/5/tileable_wood_texture_02_by_ftourini-d3k1vk9.jpg") repeat;
-*/}
+  background: #ccc;
+}
 
 th {
   text-align: left;
 }
 
 body {
-	  background: #ccc url("http://fc07.deviantart.net/fs71/f/2011/177/c/5/tileable_wood_texture_02_by_ftourini-d3k1vk9.jpg") repeat;
-
 }

@@ -17,7 +17,7 @@ post '/notes' do
 end
 
 get '/notes/:id' do
-	@partials = ["partials/view_a_note", "partials/update_a_note"]
+	@partials = ["partials/view_a_note", "partials/update_a_note", "partials/delete_a_note"]
 	p @note = Note.find(params[:id])
 	erb :note
 end
@@ -28,5 +28,6 @@ put '/notes/:id' do
 end
 
 delete '/notes/:id' do
-	# delete specific note
+	Note.find(params[:id]).delete
+	redirect '/notes'
 end
