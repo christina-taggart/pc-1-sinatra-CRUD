@@ -11,11 +11,6 @@ post '/note' do
 end	
 
 #update note
-get '/note/:id' do
-	@note = Note.find(params[:id])	
-	erb :edit
-end
-
 put '/note/:id' do
 	edit = Note.find(params[:id])
 	edit.content = params[:content]
@@ -24,11 +19,6 @@ put '/note/:id' do
 end
 
 #delete note
-get '/note/:id/delete' do
-	@note = Note.find(params[:id])
-	erb :delete
-end
-
 delete '/note/:id/delete' do
 	delete = Note.find(params[:id])
 	delete.destroy

@@ -8,3 +8,11 @@
 th {
   text-align: left;
 }
+
+.NoteDiv {
+	padding: 10px;
+}
+
+#title {
+	width:50px;
+}

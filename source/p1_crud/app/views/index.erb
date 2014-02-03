@@ -8,13 +8,15 @@
 </form>
 
 <% @note.each do |note| %>
-  <div class="NoteDiv<%= note.id %>">
+  <div class="NoteDiv">
 
-  <%= note.title %> : <%= note.content %>
-  <form action="/note/<%= note.id %>" method="get">  
-    <button type="submit">Edit</button> 
-  </form>
-  <form action="/note/<%= note.id %>/delete" method="post">  
+  <form action="/note/<%= note.id %>" method="post" id="edit">  
+    <input type="hidden" name="_method" value="put">  
+    <textarea id="title" name="title"><%= note.title %></textarea>
+    <textarea id="content" name="content"><%= note.content %></textarea>  
+    <Button type="submit">Save edits</Button>  
+  </form>  
+  <form id="delete" action="/note/<%= note.id %>/delete" method="post">  
     <input type="hidden" name="_method" value="delete">   
     <button type="submit">Delete</button>  
   </form> 
