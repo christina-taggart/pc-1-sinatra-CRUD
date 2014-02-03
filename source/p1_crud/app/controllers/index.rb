@@ -6,8 +6,8 @@ end
 
 #create new note
 post '/note' do
-	 Note.create(content: params[:note], title: params[:title])
-	 redirect "/"
+	Note.create(content: params[:note], title: params[:title])
+	redirect "/"
 end	
 
 #update note
@@ -20,11 +20,17 @@ put '/note/:id' do
 	edit = Note.find(params[:id])
 	edit.content = params[:content]
 	edit.save 
-redirect '/'
+	redirect '/'
 end
 
 #delete note
-delete '/:note_id' do
+get '/note/:id/delete' do
+	@note = Note.find(params[:id])
+	erb :delete
+end
 
-redirect '/'
+delete '/note/:id/delete' do
+	delete = Note.find(params[:id])
+	delete.destroy
+	redirect '/'
 end

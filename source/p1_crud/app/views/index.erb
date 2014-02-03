@@ -10,10 +10,14 @@
 <% @note.each do |note| %>
   <div class="NoteDiv<%= note.id %>">
 
-  <%= note.id %>. <%= note.title %> : <%= note.content %>
+  <%= note.title %> : <%= note.content %>
   <form action="/note/<%= note.id %>" method="get">  
     <button type="submit">Edit</button> 
   </form>
+  <form action="/note/<%= note.id %>/delete" method="post">  
+    <input type="hidden" name="_method" value="delete">   
+    <button type="submit">Delete</button>  
+  </form> 
   </div>
 <% end %>
 
