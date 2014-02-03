@@ -10,14 +10,17 @@ post '/note' do
 	 redirect "/"
 end	
 
+#update note
 get '/note/:id' do
 	@note = Note.find(params[:id])	
 	erb :edit
 end
-#update note
-put '/:note_id' do
- 
-redirect "/"
+
+put '/note/:id' do
+	edit = Note.find(params[:id])
+	edit.content = params[:content]
+	edit.save 
+redirect '/'
 end
 
 #delete note
