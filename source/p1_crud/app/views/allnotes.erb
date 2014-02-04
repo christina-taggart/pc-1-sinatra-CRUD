@@ -6,5 +6,10 @@
     <li><%= note.title.capitalize! %></li>
     <li><%= note.content.capitalize! %></li><br>
   </div>
+  <form name="delete" action='/notes/delete' method="get">
+    <input type="hidden" value="delete" name="_method">
+    <input type="hidden" value=
+    <input type="submit" value="Delete Note">
+  </form>
  <% end %>
 </div>

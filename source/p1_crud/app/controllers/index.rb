@@ -15,3 +15,7 @@ post '/notes/create' do
   redirect '/notes'
 end
 
+get '/notes/delete' do
+
+end
+
