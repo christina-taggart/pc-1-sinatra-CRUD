@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Note do
-  pending "add some examples to (or delete) /home/tager/ruby_projects/dbc/week4/06weekend/p1_restful_crud/source/p1_crud/Rakefile"
   let(:sample_content) { "Writing thoughts" }
   let(:note) { Note.new(content_text: sample_content) }
 
