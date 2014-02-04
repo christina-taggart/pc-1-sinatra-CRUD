@@ -13,5 +13,6 @@ get '/notes/new' do
 end
 
 post '/notes' do
+	Note.create(params)
 	redirect '/notes'
 end
