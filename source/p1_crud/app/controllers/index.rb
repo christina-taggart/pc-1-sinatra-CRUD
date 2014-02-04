@@ -1,37 +1,42 @@
 get '/' do
   # Look in app/views/index.erb
-  erb :index
+  @partial = :index
+  erb :single_page
 end
 
 #form to create note
 
 get '/notes/new' do
-	erb :new
+	@partial = :new
+	erb :single_page
 end
 
 #create new note
 post '/notes' do
 	@note = Note.create(params)
-	redirect "/notes"
+	redirect '/notes'
 end
 
 
 # #view  allnotes
 get '/notes' do
 	@notes = Note.all
-	erb :notes
+	@partial = :notes
+	erb :single_page
 end
 
 #view specific note
 get '/notes/:id' do
 	@note = Note.find(params[:id])
-	erb :note
+	@partial = :note
+	erb :single_page
 end
 
 #form to update note
 get '/notes/:id/edit' do
 	@note = Note.find(params[:id])
-	erb :edit
+	@partial = :edit
+	erb :single_page
 end
 
 #edit note
@@ -49,8 +54,7 @@ end
 
 #delete note
 delete '/notes/:id' do
-	deleted_note = Note.where(params[:id])
-	deleted_note.destroy_all
+	Note.destroy(params[:id])
 	redirect "/notes"
 end
 

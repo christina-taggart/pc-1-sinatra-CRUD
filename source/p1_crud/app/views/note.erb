@@ -1,9 +1,14 @@
 <div class="container">
 	<p><%= @note.title%></p>
 	<p><%= @note.content%></p>
-	<a href="/">home</a>
 	<form action="/notes/<%=@note.id%>/edit" method="get">
 		<input type="submit" value="edit note">
 	</form>
+	<form action="/notes/<%= @note.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete Note" onclick="return confirm('Do you really want to delete this note?');">
+	</form>
+
+	<a href="/">home</a>
 </div>
 
