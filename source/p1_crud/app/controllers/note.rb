@@ -9,7 +9,7 @@ end
 
 post '/notes' do
   Note.create(params)
-  erb :index
+  redirect '/notes'
 end
 
 delete '/notes/:id' do

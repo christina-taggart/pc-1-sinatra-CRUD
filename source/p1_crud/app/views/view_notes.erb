@@ -1,4 +1,7 @@
 <p>You have <%= @notes.count %> notes.</p>
+<form action="/notes/new" method="get">
+  <input type="submit" value="Create a Note">
+</form>
 <ol>
 <% @notes.each do |note| %>
   <div class="note">
