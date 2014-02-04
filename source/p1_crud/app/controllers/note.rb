@@ -16,3 +16,14 @@ delete '/notes/:id' do
   Note.destroy(params[:id])
   redirect '/notes'
 end
+
+get '/notes/:id/edit' do
+  @note = Note.find(params[:id])
+  erb :edit_note
+end
+
+put '/notes/:id' do
+  note = Note.find(params[:id])
+  note.update_attributes(params)
+  redirect '/notes'
+end
