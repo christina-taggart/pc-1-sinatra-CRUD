@@ -33,8 +33,13 @@ delete '/notes/:id' do
 end
 
 get '/notes/:id/edit' do
+	@note = Note.find(params[:id])
 	erb :edit_note
 end
 
 put '/notes/:id' do
+	note = Note.find(params[:id])
+	note.content = params[:content]
+	note.save
+  redirect "/notes"
 end
