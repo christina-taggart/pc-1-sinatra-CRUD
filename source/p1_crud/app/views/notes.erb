@@ -10,12 +10,7 @@
     <ul>
     <% @notes.each do |note| %>
       <li><b><%= note.title %></b><br>
-      <%= note.content %><br></li>
-      <a href="/notes/<%= note.id %>/edit">Edit Note</a>
-      <form action="/note/<%= note.id %>" method="post">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete Note" onclick="return confirm('Are you sure you want to delete this note?');">
-      </form>
+      <%= note.content %><br></li><br>
     <% end %>
   </ul>
 </div>
