@@ -1,3 +1,16 @@
-<% @all_notes.each do |note| %>
-	<%= note.title %> <br>
-<% end %>
+
+<table>
+	<tr> 
+		<td>View Note</td>
+		<td>Edit Note</td>
+		<td>Delete Note</td>
+	</tr>
+	<% @all_notes.each do |note| %>
+	<tr>
+		<td><a href="/notes/<%=note.id%>"><%= note.title %></a></td>
+		<td><a href="/notes/<%=note.id%>/edit">  edit  </a></td>
+		<td><a href="/delete/<%=note.id%>">  delete  </a><br></td>
+	</tr>
+	<% end %>
+
+</table>

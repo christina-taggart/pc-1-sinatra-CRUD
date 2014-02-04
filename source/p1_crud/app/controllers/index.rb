@@ -16,3 +16,7 @@ post '/notes' do
 	Note.create(params)
 	redirect '/notes'
 end
+
+get '/delete/:id' do
+
+end
