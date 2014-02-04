@@ -4,22 +4,23 @@ get '/notes' do
 end
 
 get '/notes/new' do
-  erb :create_note
+  @create_note = true
+  erb :index
 end
 
 post '/notes' do
   Note.create(params)
-  redirect '/notes'
+  erb :index
 end
 
 delete '/notes/:id' do
   Note.destroy(params[:id])
-  redirect '/notes'
+  erb :index
 end
 
 get '/notes/:id/edit' do
   @note = Note.find(params[:id])
-  erb :edit_note
+  erb :index
 end
 
 put '/notes/:id' do
