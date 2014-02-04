@@ -11,3 +11,8 @@ post '/notes' do
   Note.create(params)
   erb :index
 end
+
+delete '/notes/:id' do
+  Note.destroy(params[:id])
+  redirect '/notes'
+end
