@@ -20,3 +20,8 @@ end
 get '/delete/:id' do
 
 end
+
+get '/notes/:id' do
+	@note = Note.find(params[:id])
+	erb :view_note
+end
