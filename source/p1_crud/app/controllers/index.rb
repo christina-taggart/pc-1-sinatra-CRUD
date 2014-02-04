@@ -17,11 +17,24 @@ post '/notes' do
 	redirect '/notes'
 end
 
-get '/delete/:id' do
-
-end
-
 get '/notes/:id' do
 	@note = Note.find(params[:id])
 	erb :view_note
+end
+
+get '/delete/:id' do
+	@note = Note.find(params[:id])
+	erb :delete_note
+end
+
+delete '/notes/:id' do
+	Note.destroy(params[:id])
+	redirect '/notes'
+end
+
+get '/notes/:id/edit' do
+	erb :edit_note
+end
+
+put '/notes/:id' do
 end
