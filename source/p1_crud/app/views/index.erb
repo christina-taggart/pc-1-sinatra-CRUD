@@ -1,5 +1,7 @@
 Welcome to Notes!
 
-<form action="/notes" method="get">
-  <input type="submit" value="View Notes">
-</form>
+<% if @notes %>
+  <%= erb :view_notes %>
+<% else %>
+  <% redirect '/notes' %>
+<% end %>

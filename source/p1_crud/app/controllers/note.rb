@@ -1,6 +1,6 @@
 get '/notes' do
   @notes = Note.all
-  erb :view_notes
+  erb :index
 end
 
 get '/notes/new' do
