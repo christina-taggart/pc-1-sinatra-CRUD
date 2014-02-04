@@ -1,1 +1,13 @@
 <p>You have <%= @notes.count %> notes.</p>
+<ol>
+<% @notes.each do |note| %>
+  <div class="note">
+    <li class="title">
+      <%= note.title %>
+    </li>
+    <p class="content">
+      <%= note.content %>
+    </p>
+  </div>
+<% end %>
+</ol>

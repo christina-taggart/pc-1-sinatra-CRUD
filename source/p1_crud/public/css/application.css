@@ -8,3 +8,16 @@
 th {
   text-align: left;
 }
+
+.note {
+  border: 1px solid silver;
+  margin: 10px;
+}
+
+.title {
+  background-color: yellow;
+}
+
+.content {
+  background-color: blue;
+}
