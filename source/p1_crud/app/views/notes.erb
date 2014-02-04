@@ -1,0 +1,4 @@
+<% @notes.each do |note|%>
+<a href="/notes/<%=note.id%>"><%=note.title%></a>
+<p><%=note.content%></p>
+<%end%>

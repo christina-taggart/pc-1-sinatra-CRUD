@@ -1,0 +1,9 @@
+<div class="container">
+	<p><%= @note.title%></p>
+	<p><%= @note.content%></p>
+	<a href="/">home</a>
+	<form action="/notes/<%=@note.id%>/edit" method="get">
+		<input type="submit" value="edit note">
+	</form>
+</div>
+
