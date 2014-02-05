@@ -1,15 +1,15 @@
 <div class="container">
   <h2>View All Notes</h2>
-  <% @notes = Note.all %>
-  <% @notes.map do |note| %>
-  <div id="notepad">
-    <li><%= note.title.capitalize! %></li>
-    <li><%= note.content.capitalize! %></li><br>
-  </div>
+  <%= notes = Note.all %>
+  <% notes.each do |note| %>
+    <div id="notepad">
+      <%= note.title.capitalize! %><br>
+      <%= note.content.capitalize! %><br>
+    </div>
+    <% end %>
   <form name="delete" action='/notes/delete' method="get">
     <input type="hidden" value="delete" name="_method">
-    <input type="hidden" value=
+    <input type="text" name="title">
     <input type="submit" value="Delete Note">
   </form>
- <% end %>
 </div>
