@@ -11,7 +11,7 @@ get '/notes/new' do
   erb :create_note
 end
 
-post '/notes/new' do
+post '/notes' do
   @note = Note.create(title: params[:title], content: params[:content])
   id = @note.id
   redirect "/notes/#{id}"
@@ -27,13 +27,12 @@ get '/notes/:id/edit' do
   erb :edit_note
 end
 
-post '/notes/:id/edit' do
+put '/notes/:id' do
   @note = Note.find(params[:id])
   @note.title = params[:title]
   @note.content = params[:content]
   @note.save
-  id = @note.id
-  redirect "/notes/#{id}"
+  redirect "/notes/#{params[:id]}"
 end
 
 get '/notes/:id/delete-confirmation' do

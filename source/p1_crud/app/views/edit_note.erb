@@ -1,12 +1,12 @@
 <div class="container">
 
-  <form action="/notes/<%=@note.id%>/edit" method ="post">
-
+  <form action="/notes/<%=@note.id%>" method ="post">
+    <input name="_method" type="hidden" value="put" />
     <label for "title">Title:</label><br>
     <input type="text" value="<%= @note.title%>" name="title"><br><br>
 
     <label for "content">Content:</label><br>
-    <textarea cols="40" rows="10"  value="<%= @note.content%>" name="content"></textarea><br><br>
+    <textarea cols="40" rows="10" name="content"><%= @note.content%></textarea><br><br>
 
     <input type="submit" value="Edit your note"><br><br>
 

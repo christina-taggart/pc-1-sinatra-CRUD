@@ -1,8 +1,9 @@
 <div class="container">
 
+  <h4> Are you sure?</h4>
   <form action="/notes/<%= @note.id %>" method="post">
     <input name="_method" type="hidden" value="delete" />
-    <input type="submit" value="Are you sure?" />
+    <input type="submit" value="Yes" />
   </form>
 
   <p><a href="/">Back to Home</a> </p>
