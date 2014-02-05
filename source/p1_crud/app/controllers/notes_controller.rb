@@ -1,12 +1,15 @@
 get '/notes' do
-	@notes = Note.includes.all
+	@notes = Note.get_all_newest_first
 	erb :notes
 end
 
 get '/notes/new' do
+	erb :new_note
 end
 
 post '/notes' do
+	Note.create(params)
+	redirect '/notes'
 end
 
 get '/notes/:id' do
