@@ -1,4 +1,4 @@
 get '/' do
-  # Look in app/views/index.erb
+  @notes = Note.get_all_newest_first
   erb :index
 end

@@ -1,9 +1,2 @@
 <h1>Edit note</h1>
-<form action="/notes/<%= @note.id %>" method="post">
-	<input name="_method" value="put" type="hidden"/>
-	Title:<br>
-	<input type="text" name="note[title]" value="<%= @note.title %>"><br>
-	Content:<br>
-	<textarea type="text" name="note[content_text]"><%= @note.content_text %></textarea><br>
-	<input type="submit" value="Save">
-</form>
+<%= erb :edit_note_partial, locals: {note: @note} %>
