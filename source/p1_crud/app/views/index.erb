@@ -2,6 +2,7 @@
 
 <% @notes.each do |note| %>
   <%= erb :edit_note_partial, locals: { note: note } %>
+  <a href='#none' onclick="confirmLink('/notes/<%= note.id %>', 'delete')">delete</a>
 <% end %>
 
 <h2>Create Note</h2>
