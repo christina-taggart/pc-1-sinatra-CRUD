@@ -3,3 +3,6 @@
 <% @notes.each do |note| %>
   <%= erb :edit_note_partial, locals: { note: note } %>
 <% end %>
+
+<h2>Create Note</h2>
+<%= erb :new_note_partial %>
