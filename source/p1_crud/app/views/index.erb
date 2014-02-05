@@ -1,12 +1,2 @@
 Welcome to Notes!
-<% if @note %>
-  <%= erb :edit_note %>
-<% elsif @create_note %>
-  <%= erb :create_note %>
-<% else %>
-  <% if @notes %>
-    <%= erb :view_notes %>
-  <% else %>
-    <% redirect '/notes' %>
-  <% end %>
-<% end %>
+<%= erb :view_notes %>

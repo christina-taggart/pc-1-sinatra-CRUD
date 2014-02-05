@@ -1,30 +1,33 @@
 get '/notes' do
-  @notes = Note.all
+  session[:notes] = Note.all
+  session[:notes].sort_by! { |note| note.id }
   erb :index
 end
 
 get '/notes/new' do
-  @create_note = true
-  erb :index
+  session[:create_note] = true
+  redirect '/notes'
 end
 
 post '/notes' do
   Note.create(params)
-  erb :index
+  session[:create_note] = false
+  redirect '/notes'
 end
 
 delete '/notes/:id' do
   Note.destroy(params[:id])
-  erb :index
+  redirect '/notes'
 end
 
 get '/notes/:id/edit' do
-  @note = Note.find(params[:id])
+  session[:note_to_edit] = Note.find(params[:id])
   erb :index
 end
 
 put '/notes/:id' do
   note = Note.find(params[:id])
   note.update_attributes(params)
+  session[:note_to_edit] = nil
   redirect '/notes'
 end
