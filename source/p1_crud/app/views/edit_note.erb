@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Edit your note!</h1>
+  <h3>Your current title</h3>
+    <%= @note.title %>
+  <h3>Your new title</h3>
+    <form action="/note/<%= @note.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <input type="text" name="title"><br>
+  <h3>Your current content</h3>
+    <%= @note.content %>
+  <h3>Your new content</h3>
+    <textarea name="content"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+</div>

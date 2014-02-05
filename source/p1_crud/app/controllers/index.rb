@@ -13,8 +13,13 @@ delete '/note/:id' do
   redirect '/'
 end
 
-#actually, what I'd like to do is have a form pop up in page
-post '/note/:id/edit' do
+get '/note/:id/edit' do
+  @note = Note.where(id: params[:id]).first
+  erb :edit_note
+end
 
-  redirect '/note/:id/edit'
+put '/note/:id' do
+  note = Note.find(params[:id])
+  note.update_attributes(title: params[:title], content: params[:content])
+  redirect '/'
 end
