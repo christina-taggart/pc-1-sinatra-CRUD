@@ -1,6 +1,6 @@
 get '/' do
   # Look in app/views/index.erb
-  redirect '/photos'
+  redirect '/notes'
 end
 
 get '/info' do

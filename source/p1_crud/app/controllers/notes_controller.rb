@@ -1,20 +1,22 @@
 get '/notes' do
+	@notes = Note.includes.all
+	erb :notes
 end
 
-get '/photos/new' do
+get '/notes/new' do
 end
 
-post '/photos' do
+post '/notes' do
 end
 
-get '/photos/:id' do
+get '/notes/:id' do
 end
 
-get '/photos/:id/edit' do
+get '/notes/:id/edit' do
 end
 
-put '/photos/:id' do
+put '/notes/:id' do
 end
 
-delete '/photos/:id' do
+delete '/notes/:id' do
 end

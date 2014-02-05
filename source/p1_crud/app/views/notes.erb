@@ -1,0 +1,7 @@
+<h1>Notes</h1>
+
+<% @notes.each do |note| %>
+<h2><%= note.title %></h2>
+<p><%= note.content_text %></p>
+<p><%= note.created_at.strftime('Created at %m/%d/%Y %I:%M%p') %></p>
+<% end %>
