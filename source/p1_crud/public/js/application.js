@@ -5,3 +5,22 @@ $(document).ready(function() {
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
+
+function confirmLink(url, type) {
+	if (confirmDialog()) {
+		sendLink(url, type)
+		location.reload()
+	}
+}
+
+function confirmDialog() {
+	return confirm('Are you sure?')
+}
+
+function sendLink(url, type) {
+	xmlhttp=new XMLHttpRequest()
+	var parameters="_method="+type;
+	xmlhttp.open('post',url,false);
+	xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+	xmlhttp.send(parameters)
+}

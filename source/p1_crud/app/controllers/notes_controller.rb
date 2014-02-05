@@ -12,9 +12,6 @@ post '/notes' do
 	redirect '/notes'
 end
 
-get '/notes/:id' do
-end
-
 get '/notes/:id/edit' do
 	@note = Note.find(params[:id])
 	erb :edit_note
@@ -27,4 +24,6 @@ put '/notes/:id' do
 end
 
 delete '/notes/:id' do
+	Note.delete(params[:id])
+	redirect '/notes'
 end
