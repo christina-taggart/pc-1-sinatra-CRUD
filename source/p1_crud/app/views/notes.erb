@@ -1,9 +1,11 @@
 <h1>Notes</h1>
 
+<a href='/notes/new'>Add note</a>
+
 <% @notes.each do |note| %>
-<h2><%= note.title %></h2>
-<p><%= note.content_text %></p>
-<p><%= note.created_at.strftime('Created at %m/%d/%Y %I:%M%p') %></p>
+	<h2><a href='/notes/<%= note.id %>/edit'><%= note.title %></a></h2>
+	<p><%= note.content_text %></p>
+	<p><%= note.created_at.strftime('Created at %m/%d/%Y %I:%M%p') %></p>
 <% end %>
 
 <a href='/notes/new'>Add note</a>
