@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#delete').submit(function(e) {
+    if(!confirm('Are you sure you want to delete this note?')) {
+        e.preventDefault();
+        return;
+    }
+});
 });

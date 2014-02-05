@@ -3,6 +3,7 @@ get '/' do
 end
 
 get '/notes' do
+  @notes = Note.all
   erb :allnotes
 end
 

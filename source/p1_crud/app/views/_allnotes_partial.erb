@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>View All Notes</h2>
+  <% @notes.each do |note| %>
+    <div id="notepad">
+      <%= note.title.capitalize %><br>
+      <%= note.content.capitalize %><br>
+    </div>
+    <% end %>
+  <form name="delete" id="delete" action='/notes/delete' method="get">
+    <input type="hidden" value="delete" name="_method">
+    <input type="text" placeholder="Note Title" name="title">
+    <input type="submit" value="Delete Note">
+  </form>
+</div>
