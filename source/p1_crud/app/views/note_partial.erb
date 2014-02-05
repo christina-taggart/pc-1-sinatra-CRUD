@@ -1,0 +1,4 @@
+	<h2><a href='/notes/<%= note.id %>/edit'><%= note.title %></a></h2>
+	<p><%= note.content_text %></p>
+	<p><%= note.created_at.strftime('Created at %m/%d/%Y %I:%M%p') %></p>
+	<a href='#none' onclick="confirmLink('/notes/<%= note.id %>', 'delete')">delete</a>
