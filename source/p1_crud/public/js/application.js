@@ -20,11 +20,6 @@ $(document).ready(function() {
       url: 'notes/' + $('#id1').val(),
       data: $(this).serialize()
     });
-    myRequest.done(function(serverData){
-      var note = JSON.parse(serverData)
-      $('#title').html(note.title)
-      $('#content').html(note.content)
-    })
   })
 
   $('.delete').submit(function(event){
@@ -34,10 +29,9 @@ $(document).ready(function() {
       url: 'notes/' + $('#id2').val(),
       data: $(this).serialize()
     });
-    myRequest.done(function(serverData){
-      var note = JSON.parse(serverData)
-      $('#title').html(note.title)
-      $('#content').html(note.content)
-    })
+  })
+
+  $('input').on('click', function(){
+    this.value = ""
   })
 });

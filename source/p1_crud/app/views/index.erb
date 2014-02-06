@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Welcome to NoteMaker Pro!</h1>
   <form class="add" action="/notes" method="post">
-    <input type="text" name="title" value="Note Title" onclick='javascript: this.value = ""'><br>
-    <input type="text" name="content" value="Note Content" onclick='javascript: this.value = ""'>
+    <input type="text" name="title" value="Note Title"><br>
+    <input type="text" name="content" value="Note Content">
     <button type="submit">Submit!</button>
   </form>
   <h2>Here is your Newest Note:</h2>
@@ -12,14 +12,14 @@
     <%= erb :note %>
   <h3>Update your notes here:</h3>
   <form class="update">
-    <input id="id1" type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
-    <input type="text" name="title_update" value="Update Title" onclick='javascript: this.value = ""'>
-    <input type="text" name="content_update" value="Update Content" onclick='javascript: this.value = ""'>
+    <input id="id1" type="text" name="id" value="Note #">
+    <input type="text" name="title_update" value="Update Title">
+    <input type="text" name="content_update" value="Update Content">
     <button type="submit">Update!</button>
   </form>
   <h3>Delete your notes here:</h3>
   <form class="delete">
-    <input id="id2" type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
+    <input id="id2" type="text" name="id" value="Note #">
     <button type="submit" onclick="javascript: return confirm('Are you sure?')">Delete!</button>
   </form>
 </div>
