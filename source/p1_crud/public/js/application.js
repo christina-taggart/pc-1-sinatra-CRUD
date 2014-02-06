@@ -1,7 +1,43 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $('.add').submit(function(event){
+    event.preventDefault()
+    myRequest = $.ajax({
+      type: "POST",
+      url: '/notes',
+      data: $(this).serialize()
+    });
+    myRequest.done(function(serverData){
+      var note = JSON.parse(serverData).note
+      $('#title').html( note.title )
+      $('#content').html( note.content )
+    })
+  })
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('.update').submit(function(event){
+    event.preventDefault()
+    myRequest = $.ajax({
+      type: "PUT",
+      url: 'notes/' + $('#id1').val(),
+      data: $(this).serialize()
+    });
+    myRequest.done(function(serverData){
+      var note = JSON.parse(serverData)
+      $('#title').html(note.title)
+      $('#content').html(note.content)
+    })
+  })
+
+  $('.delete').submit(function(event){
+    event.preventDefault()
+    myRequest = $.ajax({
+      type: "DELETE",
+      url: 'notes/' + $('#id2').val(),
+      data: $(this).serialize()
+    });
+    myRequest.done(function(serverData){
+      var note = JSON.parse(serverData)
+      $('#title').html(note.title)
+      $('#content').html(note.content)
+    })
+  })
 });

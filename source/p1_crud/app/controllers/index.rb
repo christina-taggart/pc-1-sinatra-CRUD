@@ -3,24 +3,19 @@ get '/' do
   erb :index
 end
 
-post '/' do
+post '/notes' do
   @note = Note.create(title: params[:title], content: params[:content])
-  redirect "/"
+  @note.to_json
 end
 
-put '/' do
+put '/notes/:id' do
   @updated_note = Note.where(id: params[:id])
   @updated_note.update_all(title: params[:title_update], content: params[:content_update])
-  redirect "/"
+  @updated_note.to_json
 end
 
-delete '/' do
+delete '/notes/:id' do
   @deleted_note = Note.where(id: params[:id])
   @deleted_note.destroy_all
-  redirect "/"
+  @deleted_note.to_json
 end
-
-# Things to add as extras:
-# Error message if id is invalid
-# Ordering post update.
-# CSS style

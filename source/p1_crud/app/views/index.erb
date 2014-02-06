@@ -1,27 +1,25 @@
 <div class="container">
   <h1>Welcome to NoteMaker Pro!</h1>
-  <form action="/" method="post">
+  <form class="add" action="/notes" method="post">
     <input type="text" name="title" value="Note Title" onclick='javascript: this.value = ""'><br>
     <input type="text" name="content" value="Note Content" onclick='javascript: this.value = ""'>
     <button type="submit">Submit!</button>
   </form>
-  <h3>Here are your notes:</h3>
-  <% @note.each do |note| %>
-  <p id="title"><%= note.id %>. <%= note.title %></p>
-  <p><%= note.content %></p>
-  <% end %>
+  <h2>Here is your Newest Note:</h2>
+    <p class="header" id="title"></p>
+    <p id="content"></p>
+  <h2>Previous Notes:</h2>
+    <%= erb :note %>
   <h3>Update your notes here:</h3>
-  <form action "/" method="post">
-    <input type="hidden" name="_method" value="put">
-    <input type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
+  <form class="update">
+    <input id="id1" type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
     <input type="text" name="title_update" value="Update Title" onclick='javascript: this.value = ""'>
     <input type="text" name="content_update" value="Update Content" onclick='javascript: this.value = ""'>
     <button type="submit">Update!</button>
   </form>
   <h3>Delete your notes here:</h3>
-  <form action "/" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
+  <form class="delete">
+    <input id="id2" type="text" name="id" value="Note #" onclick='javascript: this.value = ""'>
     <button type="submit" onclick="javascript: return confirm('Are you sure?')">Delete!</button>
   </form>
 </div>
