@@ -5,11 +5,11 @@ end
 
 get '/notes' do
   @notes = Note.all
-  erb :_allnotes_partial
+  erb :index
 end
 
 get '/notes/create' do
-  erb :_create_note_partial
+  erb :index
 end
 
 post '/notes/create' do
