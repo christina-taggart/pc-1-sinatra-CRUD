@@ -1,7 +1,7 @@
 <div class="container">
   <h3>Notes:</h3>
   <% Note.all.each do |note| %>
-    <p><a href="/note/<%= note.id %>"><%= note.title %></a></p>
+    <p><a href="/notes/<%= note.id %>"><%= note.title %></a></p>
   <% end %>
 
   <div class="bottom-menu">
