@@ -1,5 +1,13 @@
 <div class="container">
   <h3>Notes:</h3>
+  <% if @new_note %>
+    <%= erb :new_note %>
+  <% end %>
+
+  <% if @note %>
+    <%= erb :note %>
+  <% end %>
+
   <% Note.all.each do |note| %>
     <p><a href="/notes/<%= note.id %>"><%= note.title %></a></p>
   <% end %>

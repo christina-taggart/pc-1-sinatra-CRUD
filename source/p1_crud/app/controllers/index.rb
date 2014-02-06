@@ -3,11 +3,12 @@ get '/' do
   erb :index
 end
 
-#CREATE note
 get '/new_note' do
-  erb :new_note
+  @new_note = true
+  erb :index
 end
 
+#CREATE note
 post '/notes' do
   new_note = Note.create(title: params[:title], content: params[:content])
   redirect "/notes/#{new_note.id}"
@@ -16,7 +17,7 @@ end
 # READ note
 get '/notes/:note_id' do
   @note = Note.find(params[:note_id])
-  erb :note
+  erb :index
 end
 
 # UPDATE note
