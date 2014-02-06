@@ -1,0 +1,8 @@
+<div class="update-note">
+  <form action="/notes/<%= @note.id %>" method='POST' id="edit">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="title" value='<%= @note.title %>'>
+    <input type="text" name="content" value='<%= @note.content %>'>
+    <input type="submit" value="Update this Note">
+  </form>
+</div>

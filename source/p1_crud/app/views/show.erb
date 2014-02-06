@@ -1,0 +1,15 @@
+<h1>Notes</h1>
+
+<div id="note">
+  <p>Title: <%=@note.title%></p>
+  <p><%="Content: #{@note.content}"%></p>
+</div>
+
+<a href='/notes/<%=@note.id%>/edit'>Edit</a>
+
+<form action="/notes/<%=@note.id%>" method="post">
+  <div style="margin:0;padding:0">
+    <input name="_method" type="hidden" value="delete"/>
+    <input type="submit" value="delete">
+  </div>
+</form>

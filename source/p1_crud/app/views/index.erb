@@ -1,23 +1,21 @@
-<div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, <%= em("world!") %></p>
-
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+<div class= "header">
+  <h1>Notes</h1>
 </div>
+
+
+<div class="links">
+  <!-- <form> -->
+  <a href="/notes/new">Create A New Note</a><br>
+<!-- </form> -->
+</div>
+
+
+<div id="notes">
+  <% @notes.each do |note| %>
+    <p>Title: <a href='/notes/<%="#{note.id}"%>'><%="#{note.title}"%></a></p>
+    <p><%="Content: #{note.content}"%></p>
+  <%end%>
+</div>
+
+
+
