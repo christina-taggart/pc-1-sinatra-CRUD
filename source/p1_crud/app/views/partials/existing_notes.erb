@@ -1,8 +1,8 @@
   <h2>Existing Notes</h2>
-  <% @notes = Note.all %>
-  <ul>
-  <% @notes.each do |note| %>
-  <li>
-  	<a href="/notes/<%= note.id %>"><%= note.title %></a>
-  </li>
+	  <% @notes = Note.all %>
+	  <ul>
+	  <% @notes.each do |note| %>
+	  <li>
+	  	<a href="/notes/<%= note.id %>"><%= note.title %></a>
+	  </li>
   <% end %>
