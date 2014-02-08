@@ -1,0 +1,17 @@
+<div>
+<table>
+  <form action="/notes/<%= @note.id %>" method="post">
+    <tr>
+      <td>title:
+      <td><input type="text" name="title" value="<%=@note.title %>">
+    <tr>
+      <td>Message:
+      <td><textarea width="3" cols="35" name="message"><%=@note.message %></textarea>
+    <tr>
+    <td>
+    <td><input type="hidden" name="_method" value="put">
+    <input type="submit" value="Update">
+  </form>
+</table>
+</div>
+

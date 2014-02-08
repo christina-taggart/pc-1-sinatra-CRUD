@@ -1,23 +1,45 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, <%= em("world!") %></p>
+  <h1> Note Machine </h1>
 
-  <table>
+  <div>
+  <% if @mode == "edit" %>
+    <div class="edit"><%= erb :edit %></div>
+  <% else %>
+    <table class="add">
+    <form>
+      <tr>
+        <td>Title:
+        <td><input type="text" name="title">
+      <tr>
+        <td>Message:
+        <td><textarea name="message" rows="3" cols="50"></textarea>
+      <tr>
+        <td><td><button type="submit" formmethod="post" formaction="/notes">Add</button>
+    </form>
+    </table>
+  <% end %>
+  </div>
+
+  <br>
+  <div>
+  <table class="notes" border="1">
+  <% @notes.each do |note| %>
+  <form action="/notes/<%= note.id %>" method="post">
     <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
+      <td> <button type="submit" formmethod="get" formaction="/notes/<%= note.id %>/edit">Edit</button>
+      <td> <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete" onclick="return confirm('For realsies?')">
+      <td class="highlight"> Title:
+      <td> <%= note.title %>
+      <td>
+      <td class="highlight"> Message:
+      <td>
+      <td> <%= note.message %>
+  </form>
+  <% end %>
   </table>
+  </div>
+
+
+
 </div>

@@ -8,3 +8,24 @@
 th {
   text-align: left;
 }
+
+.highlight{
+  background-color: #6699FF;
+  border: 1px solid silver;
+  text-align: center;
+}
+
+.notes{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add{
+  position: relative;
+  left: 40px;
+}
+
+.edit{
+  position: relative;
+  left: 40px;
+}
