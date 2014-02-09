@@ -6,17 +6,11 @@
 <% @notes.each do |note| %>
 <li>
   <% if note == @note_to_edit %>
-    <form action="/<%= note.id %>/edited" method="post">
-      <label for="title">Title: </label>
-      <input type="text" id="title" name="title">
-      <label for="content">Content: </label>
-      <input type="text" id="content" name="content">
-      <input type="submit" value="Edit Note!">
-    </form>
+    <%= erb :note_edit, :locals => {:note => note} %>
   <% else %>  
   <h3><%= note.title%></h3>
   <%= note.content %><br>
-  <a href="/<%= note.id %>/deleted">Delete Note</a>
+  <a class="delete" href="/<%= note.id %>/deleted">Delete Note</a>
   <a href="/<%= note.id %>/edit">Edit Note</a>
   <% end %>
 </li>
