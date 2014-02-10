@@ -1,14 +1,17 @@
 <div class="container" id ="all_notes">
   <h2>View All Notes</h2>
   <% @notes.each do |note| %>
-    <div id="notepad">
+    <div class="notepad">
       <%= note.title.capitalize %><br>
       <%= note.content.capitalize %><br>
+      <% if @note %>
+      <%= erb :_edit_note %>
+      <% end %>
     </div>
+     <form name="delete" class= "delete" action='/notes/<% '"#{@note.id}"' %>' method="post">
+        <input type="hidden" value="delete" name="_method">
+        <input type="submit" value="Delete Note">
+    </form>
+     <a href='/notes/<% '"#{@note.id}"'%>'>Edit Note</a>
     <% end %>
-  <form name="delete" id="delete" action='/notes/delete' method="get">
-    <input type="hidden" value="delete" name="_method">
-    <input type="text" placeholder="Note Title" name="title">
-    <input type="submit" value="Delete Note">
-  </form>
 </div>

@@ -13,12 +13,16 @@ h1 {
   text-align: center;
 }
 
-#notepad {
+.notepad {
   border: 1px solid black;
   width: 100px;
   background: #FFFF66;
   text-align: center;
-  margin-bottom: 10px;
+}
+
+.delete {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #create_notes, #all_notes {
