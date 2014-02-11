@@ -1,4 +1,4 @@
-<p>You have <%= session[:notes].count %> notes.</p>
+<p>You have <%= @notes.count %> notes.</p>
 <form action="/notes/new" method="get">
   <input type="submit" value="Create a Note">
 </form>
@@ -6,7 +6,7 @@
   <%= erb :create_note %>
 <% end %>
 <ol>
-<% session[:notes].each do |note| %>
+<% @notes.each do |note| %>
   <div class="note">
     <li class="title">
       <%= note.title %>
@@ -21,7 +21,7 @@
     <form action="/notes/<%= note.id %>/edit" method="get">
       <input type="submit" value="Edit">
     </form>
-    <% if session[:note_to_edit].eql?(note) %>
+    <% if session[:note_to_edit_id].eql?(note.id) %>
       <%= erb :edit_note %>
     <% end %>
   </div>

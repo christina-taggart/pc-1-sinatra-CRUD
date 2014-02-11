@@ -1,6 +1,5 @@
 get '/notes' do
-  session[:notes] = Note.all
-  session[:notes].sort_by! { |note| note.id }
+  @notes = Note.all.sort_by! { |note| note.id }
   erb :index
 end
 
@@ -21,13 +20,13 @@ delete '/notes/:id' do
 end
 
 get '/notes/:id/edit' do
-  session[:note_to_edit] = Note.find(params[:id])
-  erb :index
+  session[:note_to_edit_id] = Note.find(params[:id]).id
+  redirect '/notes'
 end
 
 put '/notes/:id' do
   note = Note.find(params[:id])
   note.update_attributes(params)
-  session[:note_to_edit] = nil
+  session[:note_to_edit_id] = nil
   redirect '/notes'
 end
