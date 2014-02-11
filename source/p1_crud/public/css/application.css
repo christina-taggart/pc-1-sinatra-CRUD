@@ -1,3 +1,16 @@
+body {
+  background-image: url('/img/background.jpeg');
+  color: rgba(250, 252, 255, 1.0);
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'monaco';
+}
+
+#welcome-info {
+  margin: 10px;
+  background-color: rgba(38, 116, 240, 0.8);
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
@@ -14,10 +27,42 @@ th {
   margin: 10px;
 }
 
+#create-note {
+  background-color: rgba(38, 116, 240, 0.8);
+}
+
+div.note {
+  border-radius: 20px;
+  width: 400px;
+  background-color: rgba(38, 116, 240, 0.8);
+  display: inline-block;
+}
+
 .title {
-  background-color: yellow;
+  margin: 10px;
+  text-decoration: underline;
 }
 
 .content {
-  background-color: blue;
+  margin: 10px;
+}
+
+input, textarea {
+  margin: 10px;
+  color: white;
+  background-color: rgba(38, 116, 240, 0.8)
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+  background-color: rgba(117, 170, 255, 0.9)
+}
+
+#edit-form textarea {
+  max-width: 92%;
+  max-height: 80%;
+  resize: none;
+}
+
+.delete-form, .edit-form {
+  display: inline;
 }

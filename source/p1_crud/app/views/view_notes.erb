@@ -1,4 +1,7 @@
-<p>You have <%= @notes.count %> notes.</p>
+<div id="welcome-info">
+  <p>Welcome to Notes!</p>
+  <p>You have <%= @notes.count %> notes.</p>
+</div>
 <form action="/notes/new" method="get">
   <input type="submit" value="Create a Note">
 </form>
@@ -14,11 +17,11 @@
     <p class="content">
       <%= note.content %>
     </p>
-    <form onsubmit="return confirm('Are you sure you want to Delete?');" action="/notes/<%= note.id %>" method="post">
+    <form class="delete-form" onsubmit="return confirm('Are you sure you want to Delete?');" action="/notes/<%= note.id %>" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="DELETE">
     </form>
-    <form action="/notes/<%= note.id %>/edit" method="get">
+    <form class="edit-form" action="/notes/<%= note.id %>/edit" method="get">
       <input type="submit" value="Edit">
     </form>
     <% if session[:note_to_edit_id].eql?(note.id) %>
