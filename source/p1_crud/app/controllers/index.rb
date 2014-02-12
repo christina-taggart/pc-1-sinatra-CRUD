@@ -7,11 +7,6 @@ get '/' do
   erb :index
 end
 
-get '/notes' do
-  @notes = Note.all
-  erb :notes
-end
-
 get '/notes/new' do
   erb :new_form, layout: false
 end
