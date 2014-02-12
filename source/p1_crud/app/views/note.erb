@@ -1,14 +1,10 @@
-<div class="container">
-  <h1 class="center">Note #<%= @note.id %></h1>
-  <div class="note single">
-    <p class="note-title">
-      <%= @note.title %>
-    </p>
-    <div class="note-content">
-      <p class="note-content-text"><%= @note.content %></p>
-      <button class="edit-form-button" data-url="/notes/<%= @note.id %>/edit">Edit</button>
-      <div class="edit-form"></div>
-    </div>
+<div class="note single">
+  <p class="note-title">
+    <%= @note.title %>
+  </p>
+  <div class="note-content">
+    <p class="note-content-text"><%= @note.content %></p>
+    <button class="edit-form-button" data-url="/notes/<%= @note.id %>/edit">Edit</button>
+    <div class="edit-form"></div>
   </div>
-  <h4 class="expand">Expand Notes</h4>
 </div>

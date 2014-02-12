@@ -11,6 +11,15 @@ $(document).ready(function(){
     e.preventDefault();
     deleteNote(e);
   })
+  $('.note').on('submit', '.update', function(e) {
+    e.preventDefault();
+    updateNote(e);
+  })
+
+  $('.new-note').on('click', function(e) {
+    e.preventDefault();
+    newNoteForm(e);
+  })
 });
 
 ///////////////
@@ -26,7 +35,7 @@ function getEditForm(e) {
     $element.closest('.note').html(response);
 
   }).fail(function() {
-    console.log('Failed');
+    console.log('Get edit form failed');
   })
 }
 
@@ -42,6 +51,30 @@ function deleteNote(e) {
   });
 }
 
+function newNoteForm(e) {
+   var $element = $(e.target)
+  $.ajax({
+    method: "GET",
+    url: $element.attr('data-url')
+  }).done(function(response){
+    $('.new-note-form').html(response);
+  }).fail(function(){
+    console.log("Get new note form failed.");
+  });
+}
+
+function updateNote(e) {
+  var form = e.target
+  $.ajax({
+    method: form.method,
+    url: form.action,
+    data: $(form).serialize()
+  }).done(function(response) {
+    $(form).closest('.note').html(response);
+  }).fail(function() {
+    console.log("Update note failed");
+  })
+}
 
 /////////////////
 // EXPAND NOTES

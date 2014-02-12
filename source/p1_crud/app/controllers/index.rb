@@ -13,7 +13,7 @@ get '/notes' do
 end
 
 get '/notes/new' do
-  erb :new_form
+  erb :new_form, layout: false
 end
 
 post '/notes' do
@@ -36,8 +36,8 @@ put '/notes/:id' do
   note.title = params[:title]
   note.content = params[:content]
   note.save
-  session[:change_msg] = "Note ##{params[:id]} updated."
-  redirect '/'
+  @note = note
+  erb :note, layout: false
 end
 
 delete '/notes/:id' do
