@@ -18,6 +18,7 @@ post '/notes' do
 	@title = params[:title]
 	@content = params[:content]
 	@new_note = Note.create(title: @title, content: @content)
+
 	erb :note_created
 end
 
