@@ -1,4 +1,18 @@
-<form name="edit" class= "edit" action='/notes/<% '"#{@note.id}"' %>' method="post" value="@note.title">
-        <input type="hidden" value="put" name="_method">
-        <input type="submit" value="Edit Note">
+
+
+<form name="edit_note" action='/notes/<% '"#{@note.id}"' %>'method="post">
+    Title: <input type="text" name="title">
+    <input type="hidden" value="update" name="_method">
+    <br></br>
+    Content: <input type="text" name="content">
+    <input type="submit" value="Make a Note!">
+  </form>
+
+
+     <form name="delete" class= "delete" action='/notes/<% '"#{@note.id}"' %>' method="post">
+        <input type="hidden" value="delete" name="_method">
+        <input type="submit" value="Delete Note">
     </form>
+     <a href='/notes/<% '"#{@note.id}"'%>'>Edit Note</a>
+    <% end %>
+</div>
