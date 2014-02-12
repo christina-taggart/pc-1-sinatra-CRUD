@@ -11,9 +11,7 @@
       </p>
       <div class="note-content">
         <p class="note-content-text"><%= note.content %> <a href="/notes/<%= note.id %>">More</a></p>
-        <a href="/notes/<%= note.id %>/edit">
-          <button>Edit</button>
-        </a>
+      <button class="edit-form-button" data-url="/notes/<%= note.id %>/edit">Edit</button>
       </div>
     </div>
   <% end %>

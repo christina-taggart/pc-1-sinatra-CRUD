@@ -28,7 +28,7 @@ end
 
 get '/notes/:id/edit' do
   @note = Note.find(params[:id])
-  erb :edit_form
+  erb :edit_form, layout: false
 end
 
 put '/notes/:id' do

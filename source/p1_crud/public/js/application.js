@@ -3,7 +3,32 @@ $(document).ready(function(){
   expand.hidden = true;
   bindNoteListener();
   bindExpandListener();
+  $('.edit-form-button').on('click', function(e) {
+    e.preventDefault();
+    getEditForm(e);
+  })
 });
+
+///////////////
+// AJAX CALLS
+///////////////
+
+function getEditForm(e) {
+  var $element = $(e.target)
+  $.ajax({
+    method: "GET",
+    url: $element.attr('data-url')
+  }).done(function(response) {
+    $element.closest('.note-content').html(response)
+  }).fail(function() {
+    console.log('Failed');
+  })
+}
+
+
+/////////////////
+// EXPAND NOTES
+/////////////////
 
 var bindNoteListener = function(){
   var titles = document.querySelectorAll('.note-title');

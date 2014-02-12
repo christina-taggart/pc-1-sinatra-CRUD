@@ -6,9 +6,8 @@
     </p>
     <div class="note-content">
       <p class="note-content-text"><%= @note.content %></p>
-      <a href="/notes/<%= @note.id %>/edit">
-        <button>Edit</button>
-      </a>
+      <button class="edit-form-button" data-url="/notes/<%= @note.id %>/edit">Edit</button>
+      <div class="edit-form"></div>
     </div>
   </div>
   <h4 class="expand">Expand Notes</h4>
