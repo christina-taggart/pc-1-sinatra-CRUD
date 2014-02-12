@@ -16,10 +16,9 @@
           <td><input name="_method" type="hidden" value="put"></td>
           <td><input type="submit" value="Update">
     </form>
-            <form class="right delete" action="/notes/<%= @note.id %>" method="post" onsubmit="return confirm('Are you sure?');">
-              <input name="_method" type="hidden" value="delete">
-              <input type="submit" value="Delete" >
-            </form>
+            <button class="right delete" data-url="/notes/<%= @note.id %>">
+              Delete Note
+            </button>
           </td>
         </tr>
       </table>

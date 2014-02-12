@@ -7,6 +7,10 @@ $(document).ready(function(){
     e.preventDefault();
     getEditForm(e);
   })
+  $('.note').on('click', '.delete', function(e) {
+    e.preventDefault();
+    deleteNote(e);
+  })
 });
 
 ///////////////
@@ -19,10 +23,23 @@ function getEditForm(e) {
     method: "GET",
     url: $element.attr('data-url')
   }).done(function(response) {
-    $element.closest('.note-content').html(response)
+    $element.closest('.note').html(response);
+
   }).fail(function() {
     console.log('Failed');
   })
+}
+
+function deleteNote(e) {
+  var $element = $(e.target)
+  $.ajax({
+    method: "DELETE",
+    url: $element.attr('data-url')
+  }).done(function(response){
+    $element.closest('.note').html(response);
+  }).fail(function(){
+    console.log("Delete note failed.");
+  });
 }
 
 

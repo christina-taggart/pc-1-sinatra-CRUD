@@ -42,6 +42,5 @@ end
 
 delete '/notes/:id' do
   Note.destroy(params[:id])
-  session[:change_msg] = "Note ##{params[:id]} deleted."
-  redirect '/'
+  "Note ##{params[:id]} deleted."
 end
